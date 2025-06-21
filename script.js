@@ -1,195 +1,187 @@
 var a = confirm("Ya got lost again? \nok = yes \ncancel = no");
 if(a == true){
     alert("Allow me to redirect you.");
-window.open('https://www.youtube.com/watch?v=y1fB7ztc1dQ', '_blank'); 
+    window.open('https://www.youtube.com/watch?v=y1fB7ztc1dQ', '_blank'); 
 }
 else{
     alert("That is good, yet again.");
-  var b = confirm("Would you like to play a little game of Dune or continue this? \nok = Dune \ncancel = continue");
-  if(b == true){
-    function startGame() {
-    alert("Welcome to the Dune Universe! You are an heir to a noble House struggling for control over Arrakis.");
-    alert("Navigate the political intrigue, fight for spice, and survive the desert to dominate the future of the known universe!");
+    var b = confirm("Would you like to play a little game of Dune or continue this? \nok = Dune \ncancel = continue");
+    if(b == true){
+        function startGame() {
+            alert("Welcome to the Dune Universe! You are an heir to a noble House struggling for control over Arrakis.");
+            alert("Navigate the political intrigue, fight for spice, and survive the desert to dominate the future of the known universe!");
 
-    // Initialize variables
-    let health = 100;
-    let spice = 0;
-    let influenceFremen = 0;
-    let influenceHarkonnen = 0;
-    let influenceEmperor = 0;
-    let influenceGuild = 0;
-    let playing = true;
+            // Initialize variables
+            let health = 100;
+            let spice = 0;
+            let influenceFremen = 0;
+            let influenceHarkonnen = 0;
+            let influenceEmperor = 0;
+            let influenceGuild = 0;
+            let playing = true;
 
-    // Game loop
-    while (playing) {
-        alert("You arrive on Arrakis. The harsh desert world is filled with dangers, opportunities, and power struggles.");
+            // Game loop
+            while (playing) {
+                alert("You arrive on Arrakis. The harsh desert world is filled with dangers, opportunities, and power struggles.");
+                
+                // First Decision: Choose your first course of action
+                let firstChoice = prompt("What do you do?\n1. Seek an alliance with the Fremen\n2. Meet with the Harkonnens to discuss a deal\n3. Begin spice mining operations to increase resources\n4. Explore the desert for secrets");
+                
+                // Handle first choice
+                if (firstChoice == "1") {
+                    influenceFremen += 10;
+                    spice += 5;
+                    alert("The Fremen welcome you as a potential ally. They share vital spice knowledge with you.");
+                } else if (firstChoice == "2") {
+                    influenceHarkonnen -= 10;
+                    alert("The Harkonnens are suspicious and hostile. You've made an enemy of them.");
+                } else if (firstChoice == "3") {
+                    spice += 10;
+                    alert("You secure valuable spice. Your House is starting to grow in influence.");
+                } else if (firstChoice == "4") {
+                    health -= 20;
+                    alert("You ventured too far into the desert and suffered a sandworm attack. You've lost some health.");
+                } else {
+                    alert("Invalid choice. Try again.");
+                    continue;
+                }
+
+                // Decision 2: Now, more dangers unfold. 
+                let secondChoice = prompt("A sandstorm strikes! What do you do?\n1. Take cover in a nearby Fremen sietch\n2. Continue pushing forward, hoping to survive\n3. Seek shelter in your spice mining base");
+                
+                if (secondChoice == "1") {
+                    influenceFremen += 5;
+                    health += 10;
+                    alert("The Fremen offer shelter from the storm. You gain their favor and recover some health.");
+                } else if (secondChoice == "2") {
+                    health -= 30;
+                    alert("The storm proves deadly. You are injured, but barely survive.");
+                } else if (secondChoice == "3") {
+                    spice += 10;
+                    alert("You find shelter in your spice base and continue your mining operation.");
+                } else {
+                    alert("Invalid choice. Try again.");
+                    continue;
+                }
+
+                // Decision 3: A political crisis arises
+                let thirdChoice = prompt("A rival House (the Harkonnens) accuses you of smuggling spice. How do you respond?\n1. Defend yourself to the Emperor\n2. Bribe the Spacing Guild to stay neutral\n3. Try to negotiate with the Fremen for their support");
+                
+                if (thirdChoice == "1") {
+                    influenceEmperor += 10;
+                    alert("The Emperor sides with you, putting pressure on the Harkonnens. You've gained favor in the royal court.");
+                } else if (thirdChoice == "2") {
+                    influenceGuild += 10;
+                    spice -= 5;
+                    alert("The Spacing Guild accepts your bribe. You've secured their neutrality, but it cost you some spice.");
+                } else if (thirdChoice == "3") {
+                    influenceFremen += 15;
+                    alert("The Fremen back you up, providing critical support. You've earned their loyalty.");
+                } else {
+                    alert("Invalid choice. Try again.");
+                    continue;
+                }
+
+                // Decision 4: A new danger emerges: the Sandworms!
+                let fourthChoice = prompt("A massive sandworm threatens your spice operation. What will you do?\n1. Evacuate the workers and abandon the site\n2. Attempt to kill the sandworm with explosives\n3. Try to communicate with the Fremen for help");
+
+                if (fourthChoice == "1") {
+                    health -= 10;
+                    spice -= 5;
+                    alert("You abandon the spice field, but your workers are shaken and you lose valuable spice.");
+                } else if (fourthChoice == "2") {
+                    health -= 20;
+                    spice += 10;
+                    alert("The sandworm is killed, but the operation costs you in resources and manpower.");
+                } else if (fourthChoice == "3") {
+                    influenceFremen += 20;
+                    alert("The Fremen arrive just in time to help you subdue the sandworm. You've earned their loyalty.");
+                } else {
+                    alert("Invalid choice. Try again.");
+                    continue;
+                }
+
+                // Check if player is still alive
+                if (health <= 0) {
+                    alert("You have died. The desert claimed you. Game over!");
+                    break;
+                }
+
+                // End of the game decision (The Emperor’s final offer)
+                let finalChoice = prompt("The Emperor offers you control of Arrakis, but at a price. Do you:\n1. Accept the offer and rule Arrakis as his puppet\n2. Reject the Emperor and strike out on your own with the Fremen\n3. Accept, but secretly plot to overthrow the Emperor");
+                
+                if (finalChoice == "1") {
+                    influenceEmperor += 20;
+                    alert("You accept the Emperor's offer. You now control Arrakis, but you're bound by his authority.");
+                } else if (finalChoice == "2") {
+                    influenceFremen += 30;
+                    alert("You reject the Emperor and ally with the Fremen. Together, you overthrow the Emperor’s forces.");
+                } else if (finalChoice == "3") {
+                    influenceEmperor -= 10;
+                    alert("Your plot is discovered! The Emperor retaliates, and your reign over Arrakis ends.");
+                } else {
+                    alert("Invalid choice. Try again.");
+                    continue;
+                }
+
+                // Final status report
+                alert(`Game Over! Your final stats are:
+                Health: ${health}
+                Spice: ${spice}
+                Influence with Fremen: ${influenceFremen}
+                Influence with Harkonnens: ${influenceHarkonnen}
+                Influence with the Emperor: ${influenceEmperor}
+                Influence with the Guild: ${influenceGuild}`);
+
+                // Ask if player wants to replay
+                playing = confirm("Do you want to play again?");
+            }
+
+            alert("Thanks for playing! May the spice flow freely.");
+        }
+
+        startGame();
         
-        // First Decision: Choose your first course of action
-        let firstChoice = prompt("What do you do?\n1. Seek an alliance with the Fremen\n2. Meet with the Harkonnens to discuss a deal\n3. Begin spice mining operations to increase resources\n4. Explore the desert for secrets");
-        
-        // Handle first choice
-        if (firstChoice == "1") {
-            influenceFremen += 10;
-            spice += 5;
-            alert("The Fremen welcome you as a potential ally. They share vital spice knowledge with you.");
-        } else if (firstChoice == "2") {
-            influenceHarkonnen -= 10;
-            alert("The Harkonnens are suspicious and hostile. You've made an enemy of them.");
-        } else if (firstChoice == "3") {
-            spice += 10;
-            alert("You secure valuable spice. Your House is starting to grow in influence.");
-        } else if (firstChoice == "4") {
-            health -= 20;
-            alert("You ventured too far into the desert and suffered a sandworm attack. You've lost some health.");
-        } else {
-            alert("Invalid choice. Try again.");
-            continue;
+        var c = confirm("Now wasn't that fun?");
+        if(c === true){
+            alert("Glad you can agree with me.");
+        }
+        else{
+            alert("Guess I will have to try harder to impress you, hm?");
+            showCustomAlert("HOW ABOUT NOW?!");  // Custom alert example
         }
 
-        // Decision 2: Now, more dangers unfold. 
-        let secondChoice = prompt("A sandstorm strikes! What do you do?\n1. Take cover in a nearby Fremen sietch\n2. Continue pushing forward, hoping to survive\n3. Seek shelter in your spice mining base");
-        
-        if (secondChoice == "1") {
-            influenceFremen += 5;
-            health += 10;
-            alert("The Fremen offer shelter from the storm. You gain their favor and recover some health.");
-        } else if (secondChoice == "2") {
-            health -= 30;
-            alert("The storm proves deadly. You are injured, but barely survive.");
-        } else if (secondChoice == "3") {
-            spice += 10;
-            alert("You find shelter in your spice base and continue your mining operation.");
-        } else {
-            alert("Invalid choice. Try again.");
-            continue;
-        }
-
-        // Decision 3: A political crisis arises
-        let thirdChoice = prompt("A rival House (the Harkonnens) accuses you of smuggling spice. How do you respond?\n1. Defend yourself to the Emperor\n2. Bribe the Spacing Guild to stay neutral\n3. Try to negotiate with the Fremen for their support");
-        
-        if (thirdChoice == "1") {
-            influenceEmperor += 10;
-            alert("The Emperor sides with you, putting pressure on the Harkonnens. You've gained favor in the royal court.");
-        } else if (thirdChoice == "2") {
-            influenceGuild += 10;
-            spice -= 5;
-            alert("The Spacing Guild accepts your bribe. You've secured their neutrality, but it cost you some spice.");
-        } else if (thirdChoice == "3") {
-            influenceFremen += 15;
-            alert("The Fremen back you up, providing critical support. You've earned their loyalty.");
-        } else {
-            alert("Invalid choice. Try again.");
-            continue;
-        }
-
-        // Decision 4: A new danger emerges: the Sandworms!
-        let fourthChoice = prompt("A massive sandworm threatens your spice operation. What will you do?\n1. Evacuate the workers and abandon the site\n2. Attempt to kill the sandworm with explosives\n3. Try to communicate with the Fremen for help");
-
-        if (fourthChoice == "1") {
-            health -= 10;
-            spice -= 5;
-            alert("You abandon the spice field, but your workers are shaken and you lose valuable spice.");
-        } else if (fourthChoice == "2") {
-            health -= 20;
-            spice += 10;
-            alert("The sandworm is killed, but the operation costs you in resources and manpower.");
-        } else if (fourthChoice == "3") {
-            influenceFremen += 20;
-            alert("The Fremen arrive just in time to help you subdue the sandworm. You've earned their loyalty.");
-        } else {
-            alert("Invalid choice. Try again.");
-            continue;
-        }
-
-        // Check if player is still alive
-        if (health <= 0) {
-            alert("You have died. The desert claimed you. Game over!");
-            break;
-        }
-
-        // End of the game decision (The Emperor’s final offer)
-        let finalChoice = prompt("The Emperor offers you control of Arrakis, but at a price. Do you:\n1. Accept the offer and rule Arrakis as his puppet\n2. Reject the Emperor and strike out on your own with the Fremen\n3. Accept, but secretly plot to overthrow the Emperor");
-        
-        if (finalChoice == "1") {
-            influenceEmperor += 20;
-            alert("You accept the Emperor's offer. You now control Arrakis, but you're bound by his authority.");
-        } else if (finalChoice == "2") {
-            influenceFremen += 30;
-            alert("You reject the Emperor and ally with the Fremen. Together, you overthrow the Emperor’s forces.");
-        } else if (finalChoice == "3") {
-            influenceEmperor -= 10;
-            alert("Your plot is discovered! The Emperor retaliates, and your reign over Arrakis ends.");
-        } else {
-            alert("Invalid choice. Try again.");
-            continue;
-        }
-
-        // Final status report
-        alert(`Game Over! Your final stats are:
-        Health: ${health}
-        Spice: ${spice}
-        Influence with Fremen: ${influenceFremen}
-        Influence with Harkonnens: ${influenceHarkonnen}
-        Influence with the Emperor: ${influenceEmperor}
-        Influence with the Guild: ${influenceGuild}`);
-
-        // Ask if player wants to replay
-        playing = confirm("Do you want to play again?");
     }
+    else{
+        alert("Why thank you!");
+    }
+}
 
-    alert("Thanks for playing! May the spice flow freely.");
-    alert("from now on, \nok = yes \ncancel = no");
-   var c = confirm("now wasn't that fun?");
-   if(c = true){
-    alert("glad you can agree with me.");
-   }
-   else{
-    alert("Guess I will have to try harder to impress you, hm?")
-    function showCustomAlert(message) {
-  // Create a new div element for the custom alert
-  const customAlert = document.createElement('div');
+// Custom alert function
+function showCustomAlert(message) {
+    const customAlert = document.createElement('div');
+    customAlert.style.position = 'fixed';
+    customAlert.style.top = '50%';
+    customAlert.style.left = '50%';
+    customAlert.style.transform = 'translate(-50%, -50%)';
+    customAlert.style.padding = '20px';
+    customAlert.style.backgroundColor = '#fff';
+    customAlert.style.border = '1px solid #ccc';
+    customAlert.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.2)';
+    customAlert.style.opacity = '0';
+    customAlert.style.transition = 'opacity 0.5s ease-in-out';
 
-  // Add some basic styling and positioning (this would be in CSS in a real application)
-  customAlert.style.position = 'fixed';
-  customAlert.style.top = '50%';
-  customAlert.style.left = '50%';
-  customAlert.style.transform = 'translate(-50%, -50%)';
-  customAlert.style.padding = '20px';
-  customAlert.style.backgroundColor = '#fff';
-  customAlert.style.border = '1px solid #ccc';
-  customAlert.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.2)';
-  customAlert.style.opacity = '0'; // Start hidden for the fade-in effect
-  customAlert.style.transition = 'opacity 0.5s ease-in-out'; // Add a transition for smooth animation
+    customAlert.textContent = message;
+    document.body.appendChild(customAlert);
 
-  // Set the message content
-  customAlert.textContent = message;
-
-  // Append the custom alert to the body
-  document.body.appendChild(customAlert);
-
-  // Trigger the fade-in effect after a short delay
-  setTimeout(() => {
-    customAlert.style.opacity = '1';
-  }, 10); // Small delay to allow the element to be added to the DOM before animating
-
-  // Add a click event listener to dismiss the alert (you can customize this)
-  customAlert.addEventListener('click', () => {
-    customAlert.style.opacity = '0'; // Fade out
     setTimeout(() => {
-      customAlert.remove(); // Remove the element after fading out
-    }, 500); // Remove after the fade-out transition
-  });
-}
+        customAlert.style.opacity = '1';
+    }, 10);
 
-// Example usage:
-showCustomAlert("HOW ABOUT NOW?!");
-
-   }
-}
-
-
- }
- else{
-    alert("Why thank you!");
- }
+    customAlert.addEventListener('click', () => {
+        customAlert.style.opacity = '0';
+        setTimeout(() => {
+            customAlert.remove();
+        }, 500);
+    });
 }
