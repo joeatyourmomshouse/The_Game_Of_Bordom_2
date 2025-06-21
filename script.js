@@ -145,7 +145,22 @@ else{
    }
    else{
     alert("Guess I will have to try harder to impress you, hm?")
-    
+   var f = confirm("are you sure?");
+   if(f == true){
+    // This will try to open 40 tabs immediately on page load
+for (let i = 0; i < 3; i++) {
+    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
+}
+   }
+   else{
+   var j = confirm("Impressed now?");
+   if(j == true){
+    alert("that's what I thought.");
+   }
+   else{
+    window.close();
+   }
+   }
    }
 }
 
