@@ -5,21 +5,31 @@ if (a) {
     window.open('https://www.youtube.com/watch?v=y1fB7ztc1dQ', '_blank');
 } else {
     alert("That is good, yet again.");
-    let b = confirm("Would you like to play a little game of Dune or continue this? \nok = Dune \ncancel = continue");
+
+    let b = confirm("Now, tell me honestly...\nWould you rather unravel a secret or just continue this delightful confusion?\nok = secret \ncancel = continue");
 
     if (b) {
-        alert("Oops! The Dune game is currently unavailable. Guess we’ll have to make do with other mischief...");
-        // You can add more alternate content here if you want
+        alert("Ah, the curious kind. I like that.");
+        alert("But secrets have a way of biting back. Are you sure?");
+        let secretConfirm = confirm("Last chance. Do you truly seek the truth?");
+        
+        if (secretConfirm) {
+            alert("Very well. The truth is...");
+            alert("You’ve always had the power. The question is... what will you do with it?");
+        } else {
+            alert("Wise choice. Some doors are best left unopened.");
+        }
     } else {
-        alert("Why thank you!");
+        alert("No shame in that. Some chaos is meant to be embraced, not explained.");
     }
 
     alert("From now on, \nok = yes \ncancel = no");
+
     let c = confirm("Now wasn't that fun?");
     if (c) {
         alert("Glad you can agree with me.");
     } else {
-        alert("Guess I will have to try harder to impress you, hm?");
+        alert("Guess I’ll have to try harder to impress you, hm?");
         let f = confirm("Are you sure?");
         if (f) {
             for (let i = 0; i < 3; i++) {
