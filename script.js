@@ -138,10 +138,56 @@ else{
     }
 
     alert("Thanks for playing! May the spice flow freely.");
+    alert("from now on, \nok = yes \ncancel = no");
+   var c = confirm("now wasn't that fun?");
+   if(c = true){
+    alert("glad you can agree with me.");
+   }
+   else{
+    alert("Guess I will have to try harder to impress you, hm?")
+    function showCustomAlert(message) {
+  // Create a new div element for the custom alert
+  const customAlert = document.createElement('div');
+
+  // Add some basic styling and positioning (this would be in CSS in a real application)
+  customAlert.style.position = 'fixed';
+  customAlert.style.top = '50%';
+  customAlert.style.left = '50%';
+  customAlert.style.transform = 'translate(-50%, -50%)';
+  customAlert.style.padding = '20px';
+  customAlert.style.backgroundColor = '#fff';
+  customAlert.style.border = '1px solid #ccc';
+  customAlert.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.2)';
+  customAlert.style.opacity = '0'; // Start hidden for the fade-in effect
+  customAlert.style.transition = 'opacity 0.5s ease-in-out'; // Add a transition for smooth animation
+
+  // Set the message content
+  customAlert.textContent = message;
+
+  // Append the custom alert to the body
+  document.body.appendChild(customAlert);
+
+  // Trigger the fade-in effect after a short delay
+  setTimeout(() => {
+    customAlert.style.opacity = '1';
+  }, 10); // Small delay to allow the element to be added to the DOM before animating
+
+  // Add a click event listener to dismiss the alert (you can customize this)
+  customAlert.addEventListener('click', () => {
+    customAlert.style.opacity = '0'; // Fade out
+    setTimeout(() => {
+      customAlert.remove(); // Remove the element after fading out
+    }, 500); // Remove after the fade-out transition
+  });
 }
 
-// Start the game
-startGame();
+// Example usage:
+showCustomAlert("HOW ABOUT NOW?!");
+
+   }
+}
+
+
  }
  else{
     alert("Why thank you!");
