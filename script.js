@@ -3,16 +3,17 @@ var SIMPLE_FUN = false;
 var MORE_INTO_IT = false;
 var THE_BETTER_END = false;
 var THE_DEEP_END = false;
-var GO_OUTSIDE_AND_TOUCH_SOME_GRASS = false
+var GO_OUTSIDE_AND_TOUCH_SOME_GRASS = false;
+
 // Game start
 var a = confirm("Ya got lost again? \nok = yes \ncancel = no");
-if(a == true) {
+if (a == true) {
   alert("Allow me to redirect you.");
   window.open('https://www.youtube.com/watch?v=y1fB7ztc1dQ', '_blank');
 } else {
   alert("That is good, yet again.");
 
-var b = confirm("Now, tell me honestly...\nWould you rather unravel a secret or just continue this delightful confusion?\nok = secret \ncancel = continue");
+  var b = confirm("Now, tell me honestly...\nWould you rather unravel a secret or just continue this delightful confusion?\nok = secret \ncancel = continue");
 
   if (b == true) {
     alert("Ah, the curious kind. I like that.");
@@ -40,11 +41,12 @@ var b = confirm("Now, tell me honestly...\nWould you rather unravel a secret or 
 
     let don = confirm("Too simple though?");
     if (don) {
-      alert("Fair enough. Try harder for the next acheivement.");
-      
+      alert("Fair enough. Try harder for the next achievement.");
     }
   } else {
     alert("Guess I’ll have to try harder to impress you, hm?");
+    let f = confirm("Are you sure?");
+    if (f) {
       for (let i = 0; i < 30; i++) {
         window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", '_blank');
       }
@@ -52,14 +54,11 @@ var b = confirm("Now, tell me honestly...\nWould you rather unravel a secret or 
       let j = confirm("Impressed now?");
       if (j) {
         alert("That's what I thought.");
-var THE_DEEP_END = true
-
-      } else {
-
+        THE_DEEP_END = true;
       }
     }
   }
-
+}
 
 // === Show achievements at end ===
 let earned = [];
@@ -71,8 +70,8 @@ if (GO_OUTSIDE_AND_TOUCH_SOME_GRASS) earned.push("GO OUTSIDE AND TOUCH SOME GRAS
 
 if (earned.length > 0) {
   alert("Achievements earned:\n" + earned.join("\n"));
-          window.close();
 } else {
   alert("END GAME \nNo achievements earned. \nIt even takes some effort to not get any.");
-          window.close();
 }
+
+// window.close();  // Commented out to prevent issues, remove if running in a new window/tab opened by script
