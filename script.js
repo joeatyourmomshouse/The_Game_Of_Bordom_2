@@ -29,7 +29,7 @@ if (a) {
     if (c) {
         alert("Glad you can agree with me.");
         alert("Now you can see the beutifully crafted website that was prepared for you.");
-        window.open()
+        window.open("joeatyourmomshouse/The_Game_Of_Bordom_2/real.html",)
     } else {
         alert("Guess I’ll have to try harder to impress you, hm?");
         let f = confirm("Are you sure?");
