@@ -23,7 +23,7 @@ if (a) {
         alert("No shame in that. Some chaos is meant to be embraced, not explained.");
     }
 
-    alert("From now on, \nok = yes \ncancel = no");
+    alert("From now on\nok = yes \ncancel = no");
 
     let c = confirm("Now wasn't that fun?");
     if (c) {
