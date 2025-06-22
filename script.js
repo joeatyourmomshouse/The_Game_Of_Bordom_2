@@ -69,8 +69,6 @@ if (SIMPLE_FUN) earned.push("SIMPLE FUN");
 if (MORE_INTO_IT) earned.push("MORE INTO IT");
 if (THE_BETTER_END) earned.push("THE BETTER END");
 if (THE_DEEP_END) earned.push("THE DEEP END");
-if (GO_OUTSIDE_AND_TOUCH_SOME_GRASS) earned.push("GO OUTSIDE AND TOUCH SOME GRASS");
-
 
 if (earned.length > 0) {
   alert("Achievements earned:\n" + earned.join("\n"));
