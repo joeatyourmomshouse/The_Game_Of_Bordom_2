@@ -5,16 +5,16 @@ var THE_BETTER_END = false;
 var THE_DEEP_END = false;
 var GO_OUTSIDE_AND_TOUCH_SOME_GRASS = false
 // Game start
-let a = confirm("Ya got lost again? \nok = yes \ncancel = no");
-if (a) {
+var a = confirm("Ya got lost again? \nok = yes \ncancel = no");
+if(a == true) {
   alert("Allow me to redirect you.");
   window.open('https://www.youtube.com/watch?v=y1fB7ztc1dQ', '_blank');
 } else {
   alert("That is good, yet again.");
 
-  let b = confirm("Now, tell me honestly...\nWould you rather unravel a secret or just continue this delightful confusion?\nok = secret \ncancel = continue");
+var b = confirm("Now, tell me honestly...\nWould you rather unravel a secret or just continue this delightful confusion?\nok = secret \ncancel = continue");
 
-  if (b) {
+  if (b == true) {
     alert("Ah, the curious kind. I like that.");
     alert("But secrets have a way of biting back. Are you sure?");
     let secretConfirm = confirm("Last chance. Do you truly seek the truth?");
