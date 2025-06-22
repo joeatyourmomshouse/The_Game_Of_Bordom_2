@@ -7,7 +7,7 @@ var GO_OUTSIDE_AND_TOUCH_SOME_GRASS = false;
 
 // Game start
 var a = confirm("Ya got lost again? \nok = yes \ncancel = no");
-if (a == true) {
+if (a === true) {
   alert("Allow me to redirect you.");
   window.open('https://www.youtube.com/watch?v=y1fB7ztc1dQ', '_blank');
 } else {
@@ -15,7 +15,7 @@ if (a == true) {
 
   var b = confirm("Now, tell me honestly...\nWould you rather unravel a secret or just continue this delightful confusion?\nok = secret \ncancel = continue");
 
-  if (b == true) {
+  if (b === true) {
     alert("Ah, the curious kind. I like that.");
     alert("But secrets have a way of biting back. Are you sure?");
     let secretConfirm = confirm("Last chance. Do you truly seek the truth?");
@@ -34,25 +34,25 @@ if (a == true) {
   alert("From now on\nok = yes \ncancel = no");
 
   let c = confirm("Now wasn't that fun?");
-  if (c) {
+  if (c === true) {
     alert("Glad you can agree with me.");
     alert("You won...\nCongrats, you got your first achievement!\nSIMPLE FUN");
     SIMPLE_FUN = true;
 
     let don = confirm("Too simple though?");
-    if (don) {
+    if (don === true) {
       alert("Fair enough. Try harder for the next achievement.");
     }
   } else {
     alert("Guess I’ll have to try harder to impress you, hm?");
     let f = confirm("Are you sure?");
-    if (f) {
+    if (f === true) {
       for (let i = 0; i < 30; i++) {
         window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", '_blank');
       }
     } else {
       let j = confirm("Impressed now?");
-      if (j) {
+      if (j === true) {
         alert("That's what I thought.");
         THE_DEEP_END = true;
       }
@@ -74,4 +74,5 @@ if (earned.length > 0) {
   alert("END GAME \nNo achievements earned. \nIt even takes some effort to not get any.");
 }
 
-// window.close();  // Commented out to prevent issues, remove if running in a new window/tab opened by script
+// window.close(); 
+// Commented out because window.close() usually doesn't work unless window was opened by script
