@@ -1,20 +1,11 @@
 // Achievements
-let SIMPLE_FUN = false;
-let MORE_INTO_IT = false;
-let THE_BETTER_END = false;
-let THE_DEEP_END = false;
-let GO_OUTSIDE_AND_TOUCH_SOME_GRASS = false;
-
+var SIMPLE_FUN = false;
+var MORE_INTO_IT = false;
+var THE_BETTER_END = false;
+var THE_DEEP_END = false;
+var GO_OUTSIDE_AND_TOUCH_SOME_GRASS = false
 // Game start
 let a = confirm("Ya got lost again? \nok = yes \ncancel = no");
-let r = prompt("What was the answer to the last cypher you were asked while playing \nTHE GAME OF BOREDOM?");
-
-if (r === "great") {
-  alert("You may now start \nTHE GAME OF BOREDOM 2!!");
-} else {
-  alert("GO PLAY THE GAME OF BOREDOM \nhttps://joeatyourmomshouse.github.io/THE_GAME_OF_BOREDOM/");
-}
-
 if (a) {
   alert("Allow me to redirect you.");
   window.open('https://www.youtube.com/watch?v=y1fB7ztc1dQ', '_blank');
@@ -49,24 +40,26 @@ if (a) {
 
     let don = confirm("Too simple though?");
     if (don) {
-      alert("Fair enough. Try harder for the next achievement.");
+      alert("Fair enough. Try harder for the next acheivement.");
+      
     }
   } else {
     alert("Guess I’ll have to try harder to impress you, hm?");
-    let f = confirm("Are you sure?");
-    if (f) {
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 30; i++) {
         window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", '_blank');
       }
     } else {
       let j = confirm("Impressed now?");
       if (j) {
         alert("That's what I thought.");
-        THE_DEEP_END = true;
+var THE_DEEP_END = true
+
+      } else {
+
       }
     }
   }
-}
+
 
 // === Show achievements at end ===
 let earned = [];
@@ -78,8 +71,8 @@ if (GO_OUTSIDE_AND_TOUCH_SOME_GRASS) earned.push("GO OUTSIDE AND TOUCH SOME GRAS
 
 if (earned.length > 0) {
   alert("Achievements earned:\n" + earned.join("\n"));
+          window.close();
 } else {
   alert("END GAME \nNo achievements earned. \nIt even takes some effort to not get any.");
+          window.close();
 }
-
-window.close();
