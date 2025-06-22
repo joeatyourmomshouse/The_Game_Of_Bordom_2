@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Game of Boredom - Victory Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f8ff;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #4CAF50;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-out;
+    }
+
+    p {
+      font-size: 1.5em;
+      color: #444;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeIn 3s ease-out forwards;
+    }
+
+    .badge {
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(45deg, #ff6b6b, #ffdd57);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5em;
+      color: #fff;
+      margin-bottom: 20px;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+      animation: bounce 2s infinite alternate;
+    }
+
+    .confetti {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+    }
+
+    .confetti div {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #ff6347;
+      animation: confettiFall 3s infinite ease-in;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(-15px);
+      }
+    }
+
+    @keyframes confettiFall {
+      0% {
+        top: -10px;
+        left: 50%;
+        opacity: 1;
+        transform: rotate(0deg);
+      }
+
+      100% {
+        top: 100%;
+        left: calc(50% + random(-200px, 200px));
+        opacity: 0;
+        transform: rotate(360deg);
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Congratulations!</h1>
+  <p>You've successfully beaten the game of boredom!</p>
+  <div class="badge">Champion</div>
+  <div class="confetti"></div>
+
+  <script>
+    // Create random confetti
+    function generateConfetti() {
+      const confettiContainer = document.querySelector('.confetti');
+      for (let i = 0; i < 100; i++) {
+        const confettiPiece = document.createElement('div');
+        confettiPiece.style.left = Math.random() * 100 + '%';
+        confettiPiece.style.animationDuration = Math.random() * 1 + 2 + 's';
+        confettiContainer.appendChild(confettiPiece);
+      }
+    }
+
+    // Trigger confetti on page load
+    window.onload = function () {
+      generateConfetti();
+    };
+
+    // Simple random function for confetti position
+    function random(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+  </script>
+</body>
+
+</html>

@@ -28,6 +28,8 @@ if (a) {
     let c = confirm("Now wasn't that fun?");
     if (c) {
         alert("Glad you can agree with me.");
+        alert("Now you can see the beutifully crafted website that was prepared for you.");
+        window.open()
     } else {
         alert("Guess I’ll have to try harder to impress you, hm?");
         let f = confirm("Are you sure?");
