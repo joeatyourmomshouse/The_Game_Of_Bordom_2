@@ -6,8 +6,7 @@ var THE_DEEP_END = false;
 var GO_OUTSIDE_AND_TOUCH_SOME_GRASS = false
 // Game start
 let a = confirm("Ya got lost again? \nok = yes \ncancel = no");
-for{var r = prompt("What was the answer to the last cypher you were asked while playing \nTHE GAME OF BOREDOM?");}
-
+var r = prompt("What was the answer to the last cypher you were asked while playing \nTHE GAME OF BOREDOM?");
 if(r == "great"){
     alert("You may now start \nTHE GAME OF BOREDOM 2!!")
 }
